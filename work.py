@@ -1,4 +1,6 @@
+import time
 def open_dict(name):
+    start = time.time()
     with open("result.txt","w",encoding="UTF-8") as d:
         basic_dict = {}
         for i in name:
@@ -8,6 +10,8 @@ def open_dict(name):
             d.writelines(f'{keys}\n{str(values)}\n')
             for line in open(keys,encoding="UTF-8"): d.writelines(line)
             d.writelines("\n")
+    end = time.time() - start
+    print(end)
 
 
 
